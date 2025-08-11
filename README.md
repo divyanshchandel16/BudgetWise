@@ -78,23 +78,142 @@ AI_SERVICE_URL=http://localhost:5001
 Use tools like Postman to interact with the API. Register/login to get a JWT, then use it for authenticated requests.
 
 ```bash
-# Example: Register a user
-POST /api/register
+Register
+POST {{baseUrl}}/register
+
+Body (JSON):
 {
-	"email": "user@example.com",
-	"password": "password123",
-	"name": "User Name"
+"email": "user1@example.com",
+"password": "password123",
+"name": "User One"
 }
 
-# Example: Create an expense
-POST /api/expenses
-Authorization: Bearer <token>
+Login
+POST {{baseUrl}}/register
+
+Body (JSON):
 {
-	"date": "2025-08-10",
-	"amount": 100,
-	"category": "Food",
-	"currency": "USD"
+"email": "user1@example.com",
+"password": "password123",
+"name": "User One"
 }
+
+Create Expense
+POST {{baseUrl}}/expenses
+
+Body (JSON):
+{
+"date": "2025-08-10",
+"amount": 100,
+"category": "Food",
+"description": "Lunch",
+"currency": "USD"
+}
+
+List Expenses(w pagination)
+GET {{baseUrl}}/expenses?page=1&limit=50
+
+Update Expense
+PUT {{baseUrl}}/expenses/{{expenseId}}
+
+Body (JSON):
+{
+"amount": 120,
+"description": "Lunch with dessert"
+}
+
+Delete Expense
+DELETE {{baseUrl}}/expenses/{{expenseId}}
+
+Create Budget
+POST {{baseUrl}}/budgets
+
+Body (JSON):
+{
+"category": "Food",
+"limit": 500,
+"start_date": "2025-08-01",
+"end_date": "2025-08-31"
+}
+
+List Budget
+GET {{baseUrl}}/budgets?page=1&limit=50
+
+Update Budget
+PUT {{baseUrl}}/budgets/{{budgetId}}
+
+Body (JSON):
+{
+"limit": 600
+}
+
+Delete Budget
+DELETE {{baseUrl}}/budgets/{{budgetId}}
+
+Create Goal
+Create goal:
+
+POST {{baseUrl}}/goals
+
+Body (JSON):
+{
+"goal_type": "Emergency Fund",
+"target_amount": 2000,
+"deadline": "2025-12-31"
+}
+
+List Goal
+GET {{baseUrl}}/goals?page=1&limit=50
+
+Update Goal
+PUT {{baseUrl}}/goals/{{goalId}}
+
+Body (JSON):
+{
+"target_amount": 2500
+}
+
+Delete Goal
+DELETE {{baseUrl}}/goals/{{goalId}}
+
+Get Spending Patterns
+GET {{baseUrl}}/analytics/spending-patterns
+
+Get Budget Adherence
+GET {{baseUrl}}/analytics/budget-adherence
+
+Get Spending Trend Chart
+GET {{baseUrl}}/charts/spending-trends
+
+Get Budget Adherence Chart
+GET {{baseUrl}}/charts/budget-performance
+
+Currency Conversion
+POST {{baseUrl}}/convert-currency
+
+Body (JSON):
+{
+"amount": 100,
+"from_currency": "USD",
+"to_currency": "EUR"
+}
+
+Notification Nodemailer
+POST {{baseUrl}}/notifications/trigger
+
+Body (JSON):
+{
+"type": "Budget Alert",
+"trigger": "Food budget reached 80%"
+}
+
+AI Personalized Advice
+GET {{baseUrl}}/advice/personalized
+
+AI Insight
+GET {{baseUrl}}/insights/ai
+
+	
 ```
 
 ## Credentials
