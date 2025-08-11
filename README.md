@@ -89,7 +89,7 @@ Body (JSON):
 }
 
 Login
-POST {{baseUrl}}/register
+POST {{baseUrl}}/login
 
 Body (JSON):
 {
