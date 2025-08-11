@@ -41,6 +41,10 @@ _Attach a short video walkthrough of the codebase here_
 - RESTful API (Express.js)
 - MongoDB/Mongoose ODM
 - Testing (Jest/Mocha)
+- Security headers (helmet)
+- Logging (morgan)
+- Rate limiting (express-rate-limit)
+- Health check endpoint (`/health`)
 
 ## Design Decisions or Assumptions
 - Role-based access: Users manage their own data, admins manage all records
@@ -55,8 +59,19 @@ _Attach a short video walkthrough of the codebase here_
 # Clone the repository
 cd BudgetWise
 npm install
-# Set up your .env file (see .env.example)
+# Set up your .env file (see .env section below)
 npm run dev
+```
+
+### .env file example
+```
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/budgetwise
+JWT_SECRET=changeme_super_secret_key
+EMAIL_USER=your_gmail@gmail.com
+EMAIL_PASS=your_gmail_app_password
+EXCHANGE_API_KEY=put_your_exchange_api_key_here
+AI_SERVICE_URL=http://localhost:5001
 ```
 
 ## Usage
@@ -127,3 +142,6 @@ Authorization: Bearer <token>
 - dotenv: Environment variables
 - bcryptjs: Password hashing
 - cors: CORS middleware
+- helmet: Security headers
+- morgan: Logging
+- express-rate-limit: Rate limiting
