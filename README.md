@@ -21,12 +21,6 @@ BudgetWise/
 ├─ package.json
 ├─ README.md
 
-## Video Walkthrough of the project
-_Attach a short video walkthrough of all features here_
-
-## Video Walkthrough of the codebase
-_Attach a short video walkthrough of the codebase here_
-
 ## Features
 - User & Admin roles with JWT authentication
 - Expense, Budget, and Goal management (CRUD)
