@@ -6,10 +6,6 @@ BudgetWise is a personal finance backend system that enables users to track expe
 ## Project Type
 Backend
 
-## Deployed App
-Backend: https://deployed-backend.example.com
-Database: https://cloud.mongodb.com
-
 ## Directory Structure
 BudgetWise/
 ├─ src/
