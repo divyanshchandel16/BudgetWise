@@ -47,7 +47,7 @@ app.get('/health', (req, res) => res.json({ status: 'ok' }));
 app.get('/', (req, res) => {
   res.send(`
     <h2>Backend server is running</h2>
-    <h3>Available API Endpoints after installing the project.</h3>
+    <h3>API Endpoints available after installing the project.</h3>
     <ul>
       <li><b>Register:</b> POST /api/register<br>
         Body: { "email", "password", "name" }
