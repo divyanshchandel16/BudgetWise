@@ -45,7 +45,8 @@ app.get('/health', (req, res) => res.json({ status: 'ok' }));
 
 
 app.get('/', (req, res) => {
-  res.send('Backend server is running
+  res.send(`
+    Backend server is running
 
     Available API Endpoints:
 
@@ -101,7 +102,8 @@ app.get('/', (req, res) => {
 
     AI Personalized Advice - GET /api/advice/personalized
 
-    AI Insight - GET /api/insights/ai');
+    AI Insight - GET /api/insights/ai
+  `);
 });
 
 const PORT = process.env.PORT || 5000;
